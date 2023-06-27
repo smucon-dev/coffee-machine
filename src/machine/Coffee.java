@@ -2,10 +2,10 @@ package machine;
 
 public class Coffee {
 
-    private int water;
-    private int milk;
-    private int beans;
-    private int money;
+    private final int water;
+    private final int milk;
+    private final int beans;
+    private final int money;
 
     public Coffee(int water, int milk, int beans, int money) {
         this.water = water;

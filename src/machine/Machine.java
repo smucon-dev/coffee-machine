@@ -88,7 +88,7 @@ public class Machine {
             case "1":
                 if (supplies.brew(espresso)){
                     money += espresso.getMoney();
-                };
+                }
                 break;
             case "2":
                 if (supplies.brew(latte)) {

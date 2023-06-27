@@ -2,10 +2,10 @@ package machine;
 
 public class Supplies {
 
-    private int water = 0;
-    private int milk = 0;
-    private int beans = 0;
-    private int cups = 0;
+    private int water;
+    private int milk;
+    private int beans;
+    private int cups;
 
     public Supplies(int water, int milk, int beans, int cups) {
         this.water = water;
@@ -17,9 +17,6 @@ public class Supplies {
     boolean brew(Coffee coffee) {
         if (this.water < coffee.getWater()) {
             System.out.println("Sorry, not enough water!");
-            return false;
-        } else if (this.milk < coffee.getMilk()) {
-            System.out.println("Sorry, not enough milk!");
             return false;
         } else if (this.milk < coffee.getMilk()) {
             System.out.println("Sorry, not enough milk!");
