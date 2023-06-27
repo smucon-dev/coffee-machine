@@ -14,32 +14,33 @@ public class Machine {
     boolean processInput(String input) {
 
         switch (state) {
-            case CHOOSE_ACTION:
+            case CHOOSE_ACTION -> {
                 return chooseAction(input);
-            case CHOOSE_COFFEE:
+            }
+            case CHOOSE_COFFEE -> {
                 chooseCoffee(input);
                 setState(State.CHOOSE_ACTION);
                 System.out.printf("%nWrite action (buy, fill, take, remaining, exit):%n");
-                break;
-            case FILL_WATER:
+            }
+            case FILL_WATER -> {
                 supplies.addWater(input);
                 setState(State.FILL_MILK);
                 System.out.println("Write how many ml of milk you want to add:");
-                break;
-            case FILL_MILK:
+            }
+            case FILL_MILK -> {
                 supplies.addMilk(input);
                 setState(State.FILL_BEANS);
                 System.out.println("Write how many grams of coffee beans you want to add:");
-                break;
-            case FILL_BEANS:
+            }
+            case FILL_BEANS -> {
                 supplies.addBeans(input);
                 setState(State.FILL_CUPS);
                 System.out.println("Write how many disposable cups you want to add:");
-                break;
-            case FILL_CUPS:
+            }
+            case FILL_CUPS -> {
                 supplies.addCups(input);
                 setState(State.CHOOSE_ACTION);
-                break;
+            }
         }
 
         return true;
