@@ -57,27 +57,29 @@ public class Machine {
     private boolean chooseAction(String input) {
 
         switch (input) {
-            case "buy":
+            case "buy" -> {
                 System.out.println("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu: ");
                 state = State.CHOOSE_COFFEE;
-                break;
-            case "fill":
+            }
+            case "fill" -> {
                 System.out.println("Write how many ml of water you want to add:");
                 state = State.FILL_WATER;
-                break;
-            case "take":
+            }
+            case "take" -> {
                 take();
                 System.out.printf("%nWrite action (buy, fill, take, remaining, exit):%n");
-                break;
-            case "remaining":
+            }
+            case "remaining" -> {
                 printInventory();
                 setState(State.CHOOSE_ACTION);
-                break;
-            case "exit":
+            }
+            case "exit" -> {
                 return false;
-            default:
+            }
+            default -> {
                 System.out.println("You provided an unknown action.");
                 setState(State.CHOOSE_ACTION);
+            }
         }
 
         return true;
